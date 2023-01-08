@@ -1,0 +1,280 @@
+body {
+    background-color: #303030;
+    color: #dddddd;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rectangle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#logo2 {
+    display: none;
+    width: 100px;
+}
+
+.header:first-of-type {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+
+}
+
+.header:last-of-type {
+    display: flex;
+    justify-content: left;
+    margin-left: 1em;
+    width: 100%;
+}
+
+#logo {
+    font-family: 'Tai Heritage Pro', serif;
+}
+
+#zegar {
+    font-family: 'Tai Heritage Pro', serif;
+    font-size: 60px;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.first-line {
+    align-items: center;
+    background-color: #03989e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    min-height: 142px;
+    text-align: center;
+    width: 100%;
+
+}
+
+.first-line:hover {
+    background-color: #02878d;
+}
+
+.second-line {
+    align-items: center;
+    background: #666666;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    min-height: 142px;
+    text-align: center;
+    width: 100%;
+}
+
+.second-line:hover {
+    background-color: #555555;
+}
+
+.cytat {
+    background-color: #33523c;
+    font-size: 19px;
+    margin: 10px;
+    min-height: 82px;
+    padding: 30px;
+    text-align: center;
+}
+
+.user-login {
+    background-color: #33523c;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    margin: 10px;
+    text-align: center;
+}
+
+.user-login div {
+    font-weight: bold;
+}
+
+
+.form-row {
+    padding: 5px;
+}
+
+.icons {
+    display: flex;
+    flex-flow: wrap;
+    gap: 20px;
+    margin: 10px;
+}
+
+.wrapper {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+}
+
+.icon {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    height: 142px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sub {
+    margin-top: 20px;
+
+}
+
+
+#reset {
+    margin-left: 30px;
+
+}
+
+#submit, #reset {
+    height: 40px;
+    background-color: #666666;
+    color: #dddddd;
+    border: #3b3f3f;
+}
+
+input[type="text"], input[type="password"] {
+    border: 0;
+    height: 30px;
+    background-color: #666666;
+    width: 40%;
+}
+
+::placeholder {
+    color: #dddddd;
+    padding-left: 5%;
+}
+.uri-none
+{
+    color: #dddddd;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .column {
+        flex-direction: column;
+    }
+
+    .rectangle {
+        flex-flow: wrap;
+        justify-content: center;
+    }
+
+    #nav {
+        flex-direction: column;
+    }
+
+    .header:last-of-type {
+        justify-content: center;
+    }
+
+    .header:first-of-type {
+        justify-content: center;
+    }
+
+    .icons {
+        display: flex;
+        flex-flow: wrap;
+        gap: 10px;
+        margin: 10px;
+    }
+
+    .wrapper {
+        gap: 10px;
+    }
+
+    .first-line, .second-line, .cytat, .form, .icons {
+        margin: 5px;
+    }
+
+    .form-row:last-of-type {
+        padding-bottom: 10px;
+    }
+}
+
+.heart {
+    background-color: #ffbd59;
+}
+
+.heart:hover {
+    background-color: #eeac48;
+}
+
+.globe {
+    background-color: #03989e;
+}
+
+.globe:hover {
+    background-color: #02878d;
+}
+
+.yt {
+    background-color: #b94348;
+}
+
+.yt:hover {
+    background-color: #a83237;
+}
+
+.wikipedia {
+    background-color: #03989e;
+}
+
+.wikipedia:hover {
+    background-color: #02878d;
+}
+
+
+
+@media screen and (max-width: 500px) {
+
+    #logo1 {
+        display: none;
+    }
+
+    #logo2 {
+        display: block;
+    }
+}
