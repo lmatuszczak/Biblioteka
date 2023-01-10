@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> Biblioteka domowa </title>
+    <title> Biblioteka </title>
 
     <meta name="description"
           content="Serwis prezentuje subiektywne książki z biblioteki domowej. A Ty co dziś przeczytasz?"/>
@@ -22,7 +22,7 @@
     <div class="rectangle">
         <div class="header">
             <div id="logo">
-                <a href="{{route('index')}}"><img id="logo1" src="{{asset('images/icon/logo.png')}}" alt="logo"></a>
+                <a href="{{route('index')}}">Biblioteka</a>
             </div>
         </div>
         <div class="header">
@@ -105,10 +105,10 @@
     </div>
 
     <div>
-        2022 &copy; Marta Myslowiecka, Łukasz Matuszczak, Adrian Dąbrowski - Domowa Biblioteka
+        2022 &copy; Kornel Karasiński, Łukasz Matuszczak, Adrian Dąbrowski - Biblioteka
     </div>
 
 </div>
-<script src="{{mix('js/timer.js')}}"></script>
+<script src="js/timer.js"></script>
 </body>
 </html>

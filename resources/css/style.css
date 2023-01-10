@@ -41,7 +41,20 @@ body {
 
 #logo {
     font-family: 'Tai Heritage Pro', serif;
+    margin: 0 auto;
+    font-size: 48px;
+    font-weight: bold;
 }
+
+#logo a {
+    color: #03989e;
+    text-decoration: none;
+}
+#logo a:hover {
+    color: #02878d;
+    text-decoration: none;
+}
+
 
 #zegar {
     font-family: 'Tai Heritage Pro', serif;
