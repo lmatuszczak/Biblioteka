@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PanelController;
+use App\Http\Controllers\addbookController;
+use App\Http\Controllers\favoriteController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +23,13 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/panel',[App\Http\Controllers\PanelController::class, 'index'])->name('userPanel');
-    Route::get('/panel/addbook',[App\Http\Controllers\addbookController::class, 'index'])->name('add-book');
-    Route::get('/panel/books',[App\Http\Controllers\PanelController::class, 'bookIndex'])->name('books');
-    Route::post('/panel/addbook',[App\Http\Controllers\addbookController::class, 'store'])->name('store-book');
-    Route::post('/panel/addbook/download',[App\Http\Controllers\addbookController::class, 'download'])->name('download-book');
-    Route::post('/panel/addbook/favorite',[App\Http\Controllers\favoriteController::class, 'favorite'])->name('favorite-book');
-    Route::get('/panel/addbook/favorite/view',[App\Http\Controllers\favoriteController::class, 'index'])->name('favorite-index');
+    Route::get('/panel',[PanelController::class, 'index'])->name('userPanel');
+    Route::get('/panel/addbook',[addbookController::class, 'index'])->name('add-book');
+    Route::get('/panel/books',[PanelController::class, 'bookIndex'])->name('books');
+    Route::post('/panel/addbook',[addbookController::class, 'store'])->name('store-book');
+    Route::post('/panel/addbook/download',[addbookController::class, 'download'])->name('download-book');
+    Route::post('/panel/addbook/favorite',[favoriteController::class, 'favorite'])->name('favorite-book');
+    Route::get('/panel/addbook/favorite/view',[favoriteController::class, 'index'])->name('favorite-index');
 });
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');

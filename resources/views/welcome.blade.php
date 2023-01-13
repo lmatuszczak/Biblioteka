@@ -51,7 +51,8 @@
 
                 <div class="row">
                     <div class="second-line polecane">
-                        <i class="icon-thumbs-up"></i> Polecana książka na dziś
+                        <i class="icon-thumbs-up"></i>
+                        <a class="uri-none" href="{{ route('books')  }}">Ulubione</a>
                     </div>
 
                     <div class="second-line spis">
@@ -82,7 +83,9 @@
             <div class="icons">
                 <div class="wrapper">
                     <div class="icon heart">
+                        <a class="uri-none" href="{{ route('books')  }}">
                         <i class="icon-heart"></i>
+                        </a>
                     </div>
                     <div class="icon globe">
                         <i class="icon-globe"></i>

@@ -15,6 +15,18 @@ body {
     color: #03989e;
 }
 
+#logo1 a {
+    color: #03989e;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+#logo1 a:hover {
+    color: #02878d;
+    text-decoration: none;
+}
+
 #container {
     display: flex;
     align-items: center;
@@ -121,25 +133,24 @@ input[type="submit"]:hover {
     cursor: pointer;
 }
 
-.w-5.h-5
-{
+.w-5.h-5 {
     width: 30px;
 }
 
-.menu-element nav a{
+.menu-element nav a {
     color: #dddddd;
 }
-.menu-element nav
-{
+
+.menu-element nav {
     font-size: 16px;
 }
-.background
-{
+
+.background {
     background-color: #303030 !important;
 
 }
-.background a
-{
+
+.background a {
     color: #dddddd !important;
 }
 
@@ -147,6 +158,16 @@ input[type="submit"]:hover {
 
     #logo1 {
         display: none;
+    }
+
+    #logo1 a {
+        color: #03989e;
+        text-decoration: none;
+    }
+
+    #logo1 a:hover {
+        color: #02878d;
+        text-decoration: none;
     }
 
     #logo2 {

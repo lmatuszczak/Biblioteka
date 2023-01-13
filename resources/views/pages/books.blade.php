@@ -17,7 +17,10 @@
 <div id="container">
     <div id="header">
         <div class="header-element">
-            <img id="logo1" src="{{asset('images/icon/logo.png')}}" alt="logo"/>
+            <div id="logo1">
+                <a href="{{route('index')}}">Biblioteka</a>
+            </div>
+        </div>
         </div>
 
 
