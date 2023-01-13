@@ -10,13 +10,14 @@
     <link rel="stylesheet" href="{{asset('css/style2.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{asset('css/fontello.css')}}" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Tai+Heritage+Pro&display=swap"  rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="{{asset('images/icon/logo.png')}}" type="image/x-icon">
 </head>
 <body>
 <div id="container">
     <div id="header">
         <div class="header-element">
-            <a href="{{route('index')}}"><img id="logo1" src="{{asset('images/icon/logo.png')}}" alt="logo"></a>
+            <div id="logo1">
+                <a href="{{route('index')}}">Biblioteka</a>
+            </div>
         </div>
 
         <div class="header-element">
@@ -43,11 +44,11 @@
         </div>
         <div class="menu-element">
             <i class="icon-star"></i>
-            <span>Ulubione</span>
+            <span><a class="uri-none" href="{{route('favorite-index')}}">Ulubione</a></span>
         </div>
         <div class="menu-element">
             <i class="icon-book"></i>
-            <span>Kategorie</span>
+            <span><a class="uri-none" href="{{route('indexCategory')}}">Kategorie</a></span>
         </div>
         <div class="menu-element">
             <i class="icon-user-1"></i>

@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{{asset('css/fontello.css')}}" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Tai+Heritage+Pro&display=swap"
           rel='stylesheet' type='text/css'>
-
 </head>
 <body>
 <div id="container">
@@ -20,6 +19,7 @@
             <div id="logo1">
                 <a href="{{route('index')}}">Biblioteka</a>
             </div>
+        </div>
         </div>
 
 
@@ -30,38 +30,28 @@
     <div id="content">
 
         <div class="menu-element">
-            <h3>Książki</h3>
+            <h2>Skomentuj ksiazke</h2>
+            <form id="commentform" action="{{route('store-comment')}}" method="post">
+                @csrf
+                <input type="hidden" name="idBook" value="{{$book}}">
+                <input type="hidden" name="user" value="{{ Auth::user()->name }}">
+                <textarea rows="10" cols="50" name="comment" form="commentform" required></textarea>
+                <input type="submit" value="Skomentuj">
+            </form>
+        </div>
+        <div class="menu-element">
             <table>
+                <th>Uzytkonik</th>
+                <th>Komentarz</th>
+                <th>Data utworzenia</th>
+                @foreach($comments as $comment)
                 <tr>
-                    <th>Tytuł</th>
-                    <th>Opis</th>
-                    <th>Ulubione</th>
+                    <td>{{$comment->userName}}</td>
+                    <td>{{$comment->comment}}</td>
+                    <td>{{$comment->created_at}}</td>
                 </tr>
-                @foreach($books as $book)
-                    <tr><!--{{$book->nameFile}}-->
-                        <td>{{$book->title}}</td>
-                        <td>{{$book->Description}}</td>
-                        <td>
-                            <form action="{{route('favorite-book')}}" method="post">
-                                @csrf
-                                <input type="hidden" name="titleBook" value="{{$book->title}}">
-                                <input type="hidden" name="favorite" value="1">
-                                <input type="submit" value="Dodaj/Usuń">
-                            </form>
-                        </td>
-                        <td>
-                            <form action="{{route('download-book')}}" method="post">
-                                @csrf
-                                <input type="hidden" name="nameFile" value="{{$book->nameFile}}">
-                                <input type="submit" value="Otwórz">
-                            </form>
-                        </td>
-
-                    </tr>
                 @endforeach
             </table>
-
-            {{ $books->links() }}
         </div>
 
         <div class="menu-element">

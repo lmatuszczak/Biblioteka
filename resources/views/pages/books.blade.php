@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{{asset('css/fontello.css')}}" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Tai+Heritage+Pro&display=swap"
           rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="{{asset('images/icon/logo.png')}}" type="image/x-icon">
 </head>
 <body>
 <div id="container">
@@ -57,12 +56,20 @@
                                 <input type="submit" value="Otwórz">
                             </form>
                         </td>
+                        <td>
+                            <form action="{{route('index-comment')}}" method="post">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$book->id}}">
+                                <input type="submit" value="Komentarz">
+                            </form>
+                        </td>
 
                     </tr>
                 @endforeach
             </table>
-
-            {{ $books->links() }}
+            @isset($books)
+                {{ $books->links() }}
+            @endisset
         </div>
 
         <div class="menu-element">

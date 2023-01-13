@@ -35,7 +35,7 @@
             <h3>Dodaj Kategorie</h3>
             <form action="{{route('category-store')}}" method="post" aria-label="{{ __('Upload') }}">
                 @csrf
-                <input name="name" type="text" placeholder="Kategoria">
+                <input name="name" type="text" placeholder="Kategoria" required>
                 <input type="submit" value="Dodaj">
             </form>
             @isset($info)

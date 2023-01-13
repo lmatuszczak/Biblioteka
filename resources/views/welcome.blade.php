@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="{{asset('css/fontello.css')}}" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Tai+Heritage+Pro&display=swap"
           rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="{{asset('images/icon/logo.png')}}" type="image/x-icon">
 </head>
 <body>
 <div id="container">
@@ -56,7 +55,8 @@
                     </div>
 
                     <div class="second-line spis">
-                        <i class="icon-bold"></i> Podział na kategorie
+                        <i class="icon-bold"></i>
+                        <span><a class="uri-none" href="{{route('indexCategory')}}">Kategorie</a></span>
                     </div>
                 </div>
             </div>

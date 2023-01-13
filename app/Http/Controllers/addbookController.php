@@ -13,8 +13,10 @@ class addbookController extends Controller
 {
     public function index()
     {
-        return view('pages.adDbook');
+
+        return view('pages.adDbook', ['categories' => category::paginate(10)]);
     }
+
 
     public function store(Request $request)
     {
@@ -24,9 +26,10 @@ class addbookController extends Controller
         book::create([
             'title' => $request->input('title'),
             'Description' => $request->input('description'),
-            'nameFile' => $path
+            'nameFile' => $path,
+            'id_category' => $request->input('category')
         ]);
-        return view('pages.adDbook', ['info' => $info]);
+        return view('pages.adDbook', ['info' => $info, 'categories' => category::all()]);
     }
 
     public function download(Request $request)
@@ -49,8 +52,9 @@ class addbookController extends Controller
                 'name_category' => $request->input('name')
             ]);
             $info = 'Kategoria o nazwie :' . $request->input('name') . ' zostala dodana';
+        } else {
+            $info = 'Kategoria o nazwie :' . $request->input('name') . ' juz istnieje';
         }
-        $info = 'Kategoria o nazwie :' . $request->input('name') . ' juz istnieje';
         return view('pages.adDcategory', ['info' => $info, 'categories' => $categories]);
     }
 
@@ -64,5 +68,4 @@ class addbookController extends Controller
         }
         return view('pages.adDcategory', ['info' => $info, 'categories' => $categories]);
     }
-
 }

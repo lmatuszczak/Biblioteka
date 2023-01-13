@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{{asset('css/fontello.css')}}" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Tai+Heritage+Pro&display=swap"
           rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="{{asset('images/icon/logo.png')}}" type="image/x-icon">
 </head>
 <body>
 <div id="container">
@@ -34,10 +33,16 @@
         </div>
         <div class="menu-element">
             <h3>Dodaj książke</h3>
-            <form action="{{route('store-book')}}" method="post" enctype="multipart/form-data" aria-label="{{ __('Upload') }}">
+            <form action="{{route('store-book')}}" method="post" enctype="multipart/form-data" aria-label="{{ __('Upload') }}" id="addBook">
                 @csrf
-                <input name="title" type="text" placeholder="Tytuł">
-                <input name="description" type="text" placeholder="Opis"><br><br>
+                <input name="title" type="text" placeholder="Tytuł" required>
+                <input name="description" type="text" placeholder="Opis" required><br><br>
+                <label for="category">Wybierz Kategorie:</label>
+                <select name="category" id="category" form="addBook">
+                @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name_category}}</option>
+                @endforeach
+                </select><br><br>
                 <input type="file" name="imgPDF">
                 <input type="submit" value="Wyślij">
             </form>
