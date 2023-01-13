@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{{asset('css/fontello.css')}}" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Tai+Heritage+Pro&display=swap"
           rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="{{asset('images/icon/logo.png')}}" type="image/x-icon">
 </head>
 <body>
 <div id="container">
@@ -33,21 +32,41 @@
             <span><a class="uri-none" href="{{route('index')}}">Powrót</a></span>
         </div>
         <div class="menu-element">
-            <h3>Dodaj książke</h3>
-            <form action="{{route('store-book')}}" method="post" enctype="multipart/form-data" aria-label="{{ __('Upload') }}">
+            <h3>Dodaj Kategorie</h3>
+            <form action="{{route('category-store')}}" method="post" aria-label="{{ __('Upload') }}">
                 @csrf
-                <input name="title" type="text" placeholder="Tytuł">
-                <input name="description" type="text" placeholder="Opis"><br><br>
-                <input type="file" name="imgPDF">
-                <input type="submit" value="Wyślij">
+                <input name="name" type="text" placeholder="Kategoria">
+                <input type="submit" value="Dodaj">
             </form>
             @isset($info)
-            <span>{{$info}}</span>
+                <span>{{$info}}</span>
+            @endisset
+        </div>
+        <div class="menu-element">
+            <table>
+                <th>ID</th>
+                <th>Kategoria</th>
+                @foreach($categories as $category)
+                    <tr>
+
+                        <td>{{$category->id}}</td>
+                        <td>{{$category->name_category}}</td>
+                        <td>
+                            <form action="{{route('destroy_category')}}" method="post">
+                                @csrf
+                                <input type="hidden" name="idCategory" value="{{$category->id}}">
+                                <input type="submit" value="Usuń">
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </table>
+            @isset($categories)
+                {{ $categories->links() }}
             @endisset
         </div>
     </div>
 </div>
 
-</div>
 </body>
 </html>

@@ -30,6 +30,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/panel/addbook/download',[addbookController::class, 'download'])->name('download-book');
     Route::post('/panel/addbook/favorite',[favoriteController::class, 'favorite'])->name('favorite-book');
     Route::get('/panel/addbook/favorite/view',[favoriteController::class, 'index'])->name('favorite-index');
+    Route::get('/panel/addcategory',[addbookController::class, 'index_category'])->name('category-index');
+    Route::post('/panel/addcategory',[addbookController::class, 'store_category'])->name('category-store');
+    Route::post('/panel/addcategory/destroy',[addbookController::class, 'destroy_category'])->name('destroy_category');
 });
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/home', [HomeController::class, 'index'])->name('home');

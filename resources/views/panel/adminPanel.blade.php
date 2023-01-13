@@ -47,7 +47,7 @@
         </div>
         <div class="menu-element">
             <i class="icon-book"></i>
-            <span>Dodaj kategorie</span>
+            <span><a class="uri-none" href="{{route('category-index')}}">Dodaj kategorie</a></span>
         </div>
         <div class="menu-element">
             <i class="icon-user-1"></i>
