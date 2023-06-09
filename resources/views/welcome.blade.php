@@ -108,7 +108,7 @@
     </div>
 
     <div>
-        2022 &copy; Kornel Karasiński, Łukasz Matuszczak, Adrian Dąbrowski - Biblioteka
+        2023 &copy; Kornel Karasiński, Łukasz Matuszczak- Biblioteka
     </div>
 
 </div>
