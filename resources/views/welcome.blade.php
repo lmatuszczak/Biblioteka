@@ -51,7 +51,7 @@
                 <div class="row">
                     <div class="second-line polecane">
                         <i class="icon-thumbs-up"></i>
-                        <a class="uri-none" href="{{ route('books')  }}">Ulubione</a>
+                        <a class="uri-none" href="{{ route('favorite-index')  }}">Ulubione</a>
                     </div>
 
                     <div class="second-line spis">
@@ -83,7 +83,7 @@
             <div class="icons">
                 <div class="wrapper">
                     <div class="icon heart">
-                        <a class="uri-none" href="{{ route('books')  }}">
+                        <a class="uri-none" href="{{ route('favorite-index')  }}">
                         <i class="icon-heart"></i>
                         </a>
                     </div>
@@ -108,7 +108,7 @@
     </div>
 
     <div>
-        2023 &copy; Kornel Karasiński, Łukasz Matuszczak- Biblioteka
+        2023 &copy; Kornel Karasiński, Łukasz Matuszczak, Adrian Dąbrowski- Biblioteka
     </div>
 
 </div>

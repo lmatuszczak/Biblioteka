@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\category;
 use Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\favorite;
@@ -19,6 +20,8 @@ class favoriteController extends Controller
 
     public function favorite(Request $request)
     {
+        $categories = category::all();
+
         $request->input('favorite');
         $titleBook = $request->input('titleBook');
         $favorite = $request->input('favorite');
@@ -37,6 +40,6 @@ class favoriteController extends Controller
             ]);
         }
 
-        return view('pages.adDbook',['info' => $info]);
+        return view('pages.adDbook',['info' => $info,'categories' => $categories]);
     }
 }

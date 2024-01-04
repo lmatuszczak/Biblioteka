@@ -30,7 +30,7 @@
     <div id="content">
 
         <div class="menu-element">
-            <h3>Książki</h3>
+            <h3>Ulubione książki</h3>
             <table>
                 <tr>
                     <th>Tytuł</th>

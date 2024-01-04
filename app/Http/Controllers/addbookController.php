@@ -8,9 +8,12 @@ use App\Models\book;
 use App\Models\favorite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class addbookController extends Controller
 {
+
+
     public function index()
     {
 

@@ -47,7 +47,7 @@
                 <input type="submit" value="Wyślij">
             </form>
             @isset($info)
-            <span>{{$info}}</span>
+            <span>{{$info}}@error('name'){{ $message }}@enderror</span>
             @endisset
         </div>
     </div>
