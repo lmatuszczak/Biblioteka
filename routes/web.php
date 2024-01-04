@@ -7,6 +7,7 @@ use App\Http\Controllers\favoriteController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\booksController;
 use App\Http\Controllers\commentController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +19,19 @@ use App\Http\Controllers\commentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
-Auth::routes();
-Route::group(['middleware' => 'auth'], function () {
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+
+Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/panel',[PanelController::class, 'index'])->name('userPanel');
     Route::get('/panel/addbook',[addbookController::class, 'index'])->name('add-book');
     Route::get('/panel/books',[PanelController::class, 'bookIndex'])->name('books');
